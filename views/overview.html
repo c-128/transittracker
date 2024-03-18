@@ -1,0 +1,55 @@
+{{ template "base/head" . }}
+
+<h1>Overview</h1>
+
+<h2>Vehicle Type</h2>
+<table>
+  <tr>
+    <td>Total</td>
+    <td>Trains</td>
+    <td>Trams</td>
+    <td>Buses</td>
+    <td>Ferries</td>
+    <td>On Demand Buses</td>
+    <td>Unkown</td>
+  </tr>
+  <tr>
+    <td>{{ .Vehicles.Total }}</td>
+    <td>{{ .Vehicles.Trains }}</td>
+    <td>{{ .Vehicles.Trams }}</td>
+    <td>{{ .Vehicles.Buses }}</td>
+    <td>{{ .Vehicles.Ferries }}</td>
+    <td>{{ .Vehicles.OnDemandBuses }}</td>
+    <td>{{ .Vehicles.Other }}</td>
+  </tr>
+</table>
+
+<h2>Realtime</h2>
+<table>
+  <tr>
+    <td>Availible</td>
+    <td>Unavailible</td>
+    <td>Unkown</td>
+  </tr>
+  <tr>
+    <td>{{ .Realtime.Available }}</td>
+    <td>{{ .Realtime.Unavailable }}</td>
+    <td>{{ .Realtime.Unkown }}</td>
+  </tr>
+</table>
+
+<h2>Delay</h2>
+<table>
+  <tr>
+    <td>Total</td>
+    <td>Delayed</td>
+    <td>On time</td>
+  </tr>
+  <tr>
+    <td>{{ .Delay.Total }}min</td>
+    <td>{{ .Delay.Delayed }}</td>
+    <td>{{ .Delay.NotDelayed }}</td>
+  </tr>
+</table>
+
+{{ template "base/foot" . }}
